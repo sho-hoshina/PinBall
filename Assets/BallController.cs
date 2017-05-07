@@ -38,11 +38,11 @@ public class BallController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("SmallCloudTag"))
+        if (collision.gameObject.CompareTag("SmallCloudTag") || collision.gameObject.CompareTag("SmallStarTag"))
         {
             point += 10;
             this.pointText.GetComponent<Text>().text = point.ToString();
-        }else if(collision.gameObject.CompareTag("LargeCloudTag"))
+        }else if(collision.gameObject.CompareTag("LargeCloudTag") || collision.gameObject.CompareTag("LargeStarTag"))
         {
             point += 20;
             this.pointText.GetComponent<Text>().text = point.ToString();
